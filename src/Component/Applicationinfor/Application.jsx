@@ -3,7 +3,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import logo from '../../assets/logo.png'
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import logo from '../../assets/logo.png';
+
 const ApplicationForm = () => {
   const [selectedDate, setSelectedDate] = useState(null); // Default to today
   const [states, setStates] = useState([]);
@@ -30,11 +33,15 @@ const ApplicationForm = () => {
 
   const onSubmit = (data) => {
     console.log("Submitting the Form", data);
-    navigate("/positionapply"); // Navigate to the next page
+    toast.success("Data submitted successfully!"); // Show success toast
+    setTimeout(() => {
+      navigate("/positionapply"); // Navigate to the next page after 2 seconds
+    }, 2000);
   };
 
   return (
     <div className="bg-gray-100 min-h-screen flex justify-center items-center">
+      <ToastContainer /> {/* Add ToastContainer here */}
       <div className="bg-white shadow-md p-4 sm:p-6 md:p-8 max-w-5xl w-full mt-10 sm:mt-16 md:mt-32 rounded-3xl px-4 md:px-20">
         {/* Logo and Header */}
         <div className="text-center">
@@ -142,33 +149,29 @@ const ApplicationForm = () => {
             </div>
 
             {/* Date of Birth */}
-
-<div className="flex flex-col">
-  <label className="font-medium">
-    Date Of Birth <span className="text-red-500">*</span>
-  </label>
-
-  <DatePicker
-  {...register("dob", { required: "Date is required" })}
-    selected={selectedDate}  // No auto date selection
-    onChange={(date) => {
-      setSelectedDate(date); // Local state update
-      setValue("dob", date); // React Hook Form value update
-    }}
-    minDate={new Date()} // Past dates restricted
-    maxDate={new Date()} // Future dates restricted
-    dateFormat="yyyy/MM/dd"
-    className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
-    placeholderText="Select Date" // Placeholder text added here
-  />
-
-  {errors.dob && (
-    <span className="text-red-500 text-sm">
-      {errors.dob.message}
-    </span>
-  )}
-</div>
-
+            <div className="flex flex-col">
+              <label className="font-medium">
+                Date Of Birth <span className="text-red-500">*</span>
+              </label>
+              <DatePicker
+                {...register("dob", { required: "Date is required" })}
+                selected={selectedDate}  // No auto date selection
+                onChange={(date) => {
+                  setSelectedDate(date); // Local state update
+                  setValue("dob", date); // React Hook Form value update
+                }}
+                minDate={new Date()} // Past dates restricted
+                maxDate={new Date()} // Future dates restricted
+                dateFormat="yyyy/MM/dd"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
+                placeholderText="Select Date" // Placeholder text added here
+              />
+              {errors.dob && (
+                <span className="text-red-500 text-sm">
+                  {errors.dob.message}
+                </span>
+              )}
+            </div>
 
             {/* Current Address */}
             <div className="flex flex-col lg:col-span-1">
@@ -210,9 +213,8 @@ const ApplicationForm = () => {
               )}
             </div>
 
-
-        {/* State (Text Only) */}
-        <div className="flex flex-col">
+            {/* State (Text Only) */}
+            <div className="flex flex-col">
               <label className="font-medium">
                 State <span className="text-red-500">*</span>
               </label>
@@ -233,7 +235,6 @@ const ApplicationForm = () => {
                 </span>
               )}
             </div>
-
 
             {/* Zip Code */}
             <div className="flex flex-col">
