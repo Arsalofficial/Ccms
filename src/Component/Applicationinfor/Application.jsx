@@ -150,7 +150,7 @@ const ApplicationForm = () => {
             {/* Date of Birth */}
             <div className="flex flex-col">
               <label className="font-medium">
-                Date Of Birth <span className="text-red-500">*</span>
+                Apply For Date <span className="text-red-500">*</span>
               </label>
               <DatePicker
                 {...register("dob", { required: "Date is required" })}
