@@ -29,13 +29,12 @@ const ApplicationForm = () => {
     formState: { errors },
   } = useForm();
 
-  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log("Submitting the Form", data);
     toast.success("Data submitted successfully!"); // Show success toast
     setTimeout(() => {
-      navigate("/positionapply"); // Navigate to the next page after 2 seconds
+     
     }, 2000);
   };
 
