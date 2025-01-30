@@ -12,12 +12,10 @@ const Statement = () => {
     formState: { errors },
   } = useForm();
 
-  const navigate = useNavigate();
  
 
   function onSubmit(data) {
     console.log("Submitting the Form", data);
-    navigate("/employer");
   }
 
   
@@ -72,20 +70,20 @@ const Statement = () => {
                 Print Name <span className="text-red-500">*</span>
               </label>
               <input
-                {...register("companyname", {
-                  required: "Company name is required",
+                {...register("PrintName", {
+                  required: "Print Name is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "Only text is allowed, no numbers or special characters",
+                    message: "Only text is allowed, no numbers ",
                   },
                 })}
                 type="text"
-                placeholder="Enter your Company Name"
+                placeholder="Enter your Print Name"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.companyname && (
+              {errors.PrintName && (
                 <span className="text-red-500 text-sm">
-                  {errors.companyname.message}
+                  {errors.PrintName.message}
                 </span>
               )}
             </div>
@@ -95,13 +93,13 @@ const Statement = () => {
                 Signature Date <span className="text-red-500">*</span>
               </label>
               <input
-                {...register("fromDate", { required: "From date is required" })}
+                {...register("Signature", { required: "Signature  date is required" })}
                 type="date"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.fromDate && (
+              {errors.Signature && (
                 <span className="text-red-500 text-sm">
-                  {errors.fromDate.message}
+                  {errors.Signature.message}
                 </span>
               )}
             </div>

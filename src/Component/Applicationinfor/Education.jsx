@@ -71,96 +71,96 @@ const Education = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
           >
-            {/* First Name */}
+            {/* SCHOOL Name */}
             <div className="flex flex-col ">
               <label className="font-medium">
                 SCHOOL NAME/LOCATION<span className="text-red-500">*</span>
               </label>
               <input
-                {...register("firstName", {
-                  required: "First name is required",
+                {...register("School", {
+                  required: "School name is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "First name should only contain letters",
+                    message: "School name should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your first name"
+                placeholder="Enter your School name"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.firstName && (
+              {errors.School && (
                 <span className="text-red-500 text-sm">
-                  {errors.firstName.message}
+                  {errors.School.message}
                 </span>
               )}
             </div>
 
-            {/* Middle Name */}
+            {/* MAJOR STUDIED */}
             <div className="flex flex-col ">
               <label className="font-medium">MAJOR STUDIED<span className="text-red-500">*</span></label>
               <input
-                {...register("middleName", {
-                  required: "Middle name is required",
+                {...register("Major", {
+                  required: "MAJOR STUDIED is required",
                   pattern: {
                     value: /^[A-Za-z\s]+$/,
-                    message: "Middle name should only contain letters",
+                    message: "Major studied should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your middle name"
+                placeholder="Enter your Major Studied"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.middleName && (
+              {errors.Major && (
                 <span className="text-red-500 text-sm">
-                  {errors.middleName.message}
+                  {errors.Major.message}
                 </span>
               )}
             </div>
 
-            {/* Last Name */}
+            {/* NO. YEARS */}
             <div className="flex flex-col ">
               <label className="font-medium">
                 NO. YEARS COMPLETED<span className="text-red-500">*</span>
               </label>
               <input
-                {...register("lastName", {
-                  required: "Last name is required",
+                {...register("noyears", {
+                  required: "no years is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "Last name should only contain letters",
+                    message: "no years should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your last name"
+                placeholder="Enter your no years"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.lastName && (
+              {errors.noyears && (
                 <span className="text-red-500 text-sm">
-                  {errors.lastName.message}
+                  {errors.noyears.message}
                 </span>
               )}
             </div>
 
-            {/* First Name */}
+            {/* Type of degree/certificate */}
             <div className="flex flex-col">
               <label className="font-medium">
                 Type of degree/certificate<span className="text-red-500">*</span>
               </label>
               <input
-                {...register("firstName", {
-                  required: "First name is required",
+                {...register("degree", {
+                  required: "degree name is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "First name should only contain letters",
+                    message: "degree name should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your first name"
+                placeholder="Enter your degree name"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.firstName && (
+              {errors.degree && (
                 <span className="text-red-500 text-sm">
-                  {errors.firstName.message}
+                  {errors.degree.message}
                 </span>
               )}
             </div>
@@ -184,7 +184,7 @@ const Education = () => {
                 {...register("computerSkills", {
                   required: "List any programing knowledge that you are good at is required",
                 })}
-                placeholder="Example: Microsoft Office, Photoshop, Python, etc."
+                placeholder="Enter Your Skills."
                 className="w-full mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
                 rows={5}
               />
@@ -201,16 +201,16 @@ const Education = () => {
               List any programming skills you are proficient in (if you dont have knowledge, just put "NONE")<span className="text-red-500">*</span>
               </label>
               <textarea
-                {...register("computerSkills", {
+                {...register("Skills", {
                   required: "List any programing knowledge that you are good at is required",
                 })}
-                placeholder="Example: Microsoft Office, Photoshop, Python, etc."
+                placeholder="Enter Your Skills.."
                 className="w-full mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
                 rows={5}
               />
-              {errors.computerSkills && (
+              {errors.Skills && (
                 <span className="text-red-500 text-sm">
-                  {errors.computerSkills.message}
+                  {errors.Skills.message}
                 </span>
               )}
             </div>

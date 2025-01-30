@@ -75,23 +75,23 @@ const Employers = () => {
             {/* First Name */}
             <div className="flex flex-col lg:col-span-2">
               <label className="font-medium">
-                First Name <span className="text-red-500">*</span>
+              Company Name <span className="text-red-500">*</span>
               </label>
               <input
-                {...register("firstName", {
-                  required: "First name is required",
+                {...register("Company", {
+                  required: "Company name is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "First name should only contain letters",
+                    message: "Company should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your first name"
+                placeholder="Enter your Company name"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.firstName && (
+              {errors.Company && (
                 <span className="text-red-500 text-sm">
-                  {errors.firstName.message}
+                  {errors.Company.message}
                 </span>
               )}
             </div>
@@ -104,9 +104,9 @@ const Employers = () => {
               </label>
               <textarea
                 {...register("computerSkills", {
-                  required: "List any programing knowledge that you are good at is required",
+                  required: "Supervisor Name / Email (Optional) is required",
                 })}
-                placeholder="Example: Microsoft Office, Photoshop, Python, etc."
+                placeholder="Supervisor Name / Email (Optional)."
                 className="w-full mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
                 rows={2}
               />
@@ -118,24 +118,24 @@ const Employers = () => {
             </div>
 
 
-            {/* Middle Name */}
+            {/* Address Name */}
             <div className="flex flex-col">
               <label className="font-medium">Address <span className="text-red-500">*</span></label> 
               <input
-                {...register("middleName", {
-                    required: "Middle name is required",
+                {...register("Address", {
+                    required: "Address name is required",
                   pattern: {
                     value: /^[A-Za-z\s]+$/,
-                    message: "Middle name should only contain letters",
+                    message: "Address name should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your middle name"
+                placeholder="Enter your Address name"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.middleName && (
+              {errors.Address && (
                 <span className="text-red-500 text-sm">
-                  {errors.middleName.message}
+                  {errors.Address.message}
                 </span>
               )}
             </div>
@@ -186,26 +186,26 @@ const Employers = () => {
               )}
             </div>
 
-            {/* Last Name */}
+            {/* City name */}
             <div className="flex flex-col">
               <label className="font-medium">
               City<span className="text-red-500">*</span>
               </label>
               <input
-                {...register("lastName", {
-                  required: "Last name is required",
+                {...register("CityName", {
+                  required: "City name is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "Last name should only contain letters",
+                    message: "City name should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your last name"
+                placeholder="Enter your City name"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.lastName && (
+              {errors.CityName && (
                 <span className="text-red-500 text-sm">
-                  {errors.lastName.message}
+                  {errors.CityName.message}
                 </span>
               )}
             </div>
@@ -232,26 +232,26 @@ const Employers = () => {
               )}
             </div>
 
-          {/* First Name */}
+          {/* Position Held */}
          <div className="flex flex-col">
               <label className="font-medium">
               Position Held <span className="text-red-500">*</span>
               </label>
               <input
-                {...register("firstName", {
-                  required: "First name is required",
+                {...register("PositionHeld", {
+                  required: "Position Held is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "First name should only contain letters",
+                    message: "Position Held should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your first name"
+                placeholder="Enter your position held"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.firstName && (
+              {errors.PositionHeld && (
                 <span className="text-red-500 text-sm">
-                  {errors.firstName.message}
+                  {errors.PositionHeld.message}
                 </span>
               )}
             </div>
@@ -286,7 +286,13 @@ const Employers = () => {
               )}
             </div>
 
-           
+            {/* Company 1 Heading */}
+            <div className="col-span-full mt-8">
+              <h2 className="text-xl font-bold mb-6">
+                Company 1
+                <hr className="mt-4" />
+              </h2>
+            </div>
 
             {/* Buttons */}
             <div className="col-span-full flex gap-5 mt-8 flex-col sm:flex-row">

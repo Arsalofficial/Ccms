@@ -73,73 +73,71 @@ const  PositionApply = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
           >
-            {/* First Name */}
+            {/* Work Desired  */}
             <div className="flex flex-col lg:col-span-2">
               <label className="font-medium">
               Type of Work Desired <span className="text-red-500">*</span>
               </label>
               <input
-                {...register("firstName", {
-                  required: "First name is required",
+                {...register("desired", {
+                  required: "Work desired is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "First name should only contain letters",
+                    message: "Work desired should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your first name"
+                placeholder="Enter your work desired"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.firstName && (
+              {errors.desired && (
                 <span className="text-red-500 text-sm">
-                  {errors.firstName.message}
+                  {errors.desired.message}
                 </span>
               )}
             </div>
 
-            {/* Middle Name */}
+            {/* Emergency Notify */}
             <div className="flex flex-col lg:col-span-2">
               <label className="font-medium">In Case of Emergency Notify<span className="text-red-500">*</span></label> 
               <input
-                {...register("middleName", {
-                    required: "Middle name is required",
+                {...register("emergencynotify", {
+                    required: "Emergency Notify is required",
                   pattern: {
                     value: /^[A-Za-z\s]+$/,
-                    message: "Middle name should only contain letters",
+                    message: "Emergency Notify should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your middle name"
+                placeholder="Enter your Emergency Notify"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.middleName && (
+              {errors.emergencynotify && (
                 <span className="text-red-500 text-sm">
-                  {errors.middleName.message}
+                  {errors.emergencynotify.message}
                 </span>
               )}
             </div>
 
-            {/* Last Name */}
             <div className="flex flex-col lg:col-span-full">
               <label className="font-medium">
-              If hired, can you provide evidence that you are authorized and of legal age to work <span className="text-red-500">*</span>
+              If hired, can you provide evidence that you are authorized and of legal age to work                 <span className="text-red-500"> *</span>
               </label>
-              <input
-                {...register("lastName", {
-                  required: "Last name is required",
-                  pattern: {
-                    value: /^[a-zA-Z\s]*$/,
-                    message: "Last name should only contain letters",
-                  },
-                })}
-                type="text"
-                placeholder="Enter your last name"
-                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
-              />
-              {errors.lastName && (
-                <span className="text-red-500 text-sm">
-                  {errors.lastName.message}
-                </span>
+              <div className="relative">
+                <select
+                  {...register("state", { required: "State is required" })}
+                  className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm appearance-none w-full"
+                >
+                  <option value="">Select One</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                  ▼
+                </div>
+              </div>
+              {errors.state && (
+                <span className="text-red-500 text-sm">{errors.state.message}</span>
               )}
             </div>
 
@@ -151,11 +149,11 @@ const  PositionApply = () => {
                Telephone <span className="text-red-500">*</span>
               </label>
               <input
-                {...register("phone", {
-                  required: "Phone number is required",
+                {...register("telephone", {
+                  required: "Telephone number is required",
                   pattern: {
                     value: /^(03[0-9]{2})[0-9]{7}$/,
-                    message: "Enter a valid 11-digit phone number (e.g., 03X-XXXXXXXX)",
+                    message: "Enter a valid 11-digit telephone number (e.g., 03X-XXXXXXXX)",
                   },
                 })}
                 type="text"
@@ -163,55 +161,55 @@ const  PositionApply = () => {
                 maxLength="11"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.phone && (
-                <span className="text-red-500 text-sm">{errors.phone.message}</span>
+              {errors.telephone && (
+                <span className="text-red-500 text-sm">{errors.telephone.message}</span>
               )}
             </div>
 
-            {/* First Name */}
+            {/* Emergency Contact */}
             <div className="flex flex-col">
               <label className="font-medium">
               Emergency Contact Person<span className="text-red-500">*</span>
               </label>
               <input
-                {...register("firstName", {
-                  required: "First name is required",
+                {...register("emergencycontact", {
+                  required: "Emergency Contact is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "First name should only contain letters",
+                    message: "Emergency Contact should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your first name"
+                placeholder="Enter your Emergency Contact"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.firstName && (
+              {errors.emergencycontact && (
                 <span className="text-red-500 text-sm">
-                  {errors.firstName.message}
+                  {errors.emergencycontact.message}
                 </span>
               )}
             </div>
 
-            {/* First Name */}
+            {/* Nearest Relative  */}
             <div className="flex flex-col">
               <label className="font-medium">
               Name of Nearest Relative <span className="text-red-500">*</span>
               </label>
               <input
-                {...register("firstName", {
-                  required: "First name is required",
+                {...register("nearest", {
+                  required: "Nearest Relative  is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "First name should only contain letters",
+                    message: "Nearest Relative  should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your first name"
+                placeholder="Enter your Nearest Relative "
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.firstName && (
+              {errors.nearest  && (
                 <span className="text-red-500 text-sm">
-                  {errors.firstName.message}
+                  {errors.nearest.message}
                 </span>
               )}
             </div>
@@ -261,26 +259,26 @@ const  PositionApply = () => {
               )}
             </div>
 
-             {/* First Name */}
+             {/* Address of nearest relative person */}
              <div className="flex flex-col lg:col-span-2">
               <label className="font-medium">
               Address of nearest relative person<span className="text-red-500">*</span>
               </label>
               <input
-                {...register("firstName", {
-                  required: "First name is required",
+                {...register("person", {
+                  required: "Address of nearest relative person is required",
                   pattern: {
                     value: /^[a-zA-Z\s]*$/,
-                    message: "First name should only contain letters",
+                    message: "Address of nearest relative person should only contain letters",
                   },
                 })}
                 type="text"
-                placeholder="Enter your first name"
+                placeholder="Enter your Address of nearest relative person"
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
-              {errors.firstName && (
+              {errors.person && (
                 <span className="text-red-500 text-sm">
-                  {errors.firstName.message}
+                  {errors.person.message}
                 </span>
               )}
             </div>
