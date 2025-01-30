@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logo from '../../assets/logo.png';
@@ -33,9 +32,6 @@ const ApplicationForm = () => {
   const onSubmit = (data) => {
     console.log("Submitting the Form", data);
     toast.success("Data submitted successfully!"); // Show success toast
-    setTimeout(() => {
-     
-    }, 2000);
   };
 
   return (
