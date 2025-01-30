@@ -54,7 +54,7 @@ const IT = () => {
         {/* Button */}
         <div className="mt-6 flex justify-start">
           <Link to="/Applicationform">
-            <button className="bg-[#041970] text-white px-6 py-4 rounded-md transition font-semibold">
+            <button className="bg-[#041970] text-white px-6 py-4 rounded-md transition font-semibold cursor-pointer">
               Continue Application
             </button>
           </Link>

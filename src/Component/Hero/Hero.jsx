@@ -99,7 +99,7 @@ const Hero = () => {
         <div className="mt-6 flex justify-center sm:justify-start">
           <button
             onClick={handleContinue}
-            className="bg-[#3D4B9A] text-white px-6 py-3 rounded-md transition font-bold w-full sm:w-auto"
+            className="bg-[#3D4B9A] text-white px-6 py-3 rounded-md transition font-bold w-full sm:w-auto cursor-pointer"
           >
             Continue Application
           </button>
