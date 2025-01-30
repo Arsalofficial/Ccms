@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ApplicationForm = () => {
+const Application = () => {
   const [selectedDate, setSelectedDate] = useState(null); // Default to today
   const [states, setStates] = useState([]);
 
@@ -314,4 +314,4 @@ const ApplicationForm = () => {
   );
 };
 
-export default ApplicationForm; 
+export default Application; 
