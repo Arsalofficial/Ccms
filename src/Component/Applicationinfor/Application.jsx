@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import logo from '../../assets/logo.png';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import logo from '../../assets/logo.png';
 
 const ApplicationForm = () => {
   const [selectedDate, setSelectedDate] = useState(null); // Default to today
