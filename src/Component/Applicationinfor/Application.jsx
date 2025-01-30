@@ -40,7 +40,7 @@ const ApplicationForm = () => {
       <div className="bg-white shadow-md p-4 sm:p-6 md:p-8 max-w-5xl w-full mt-10 sm:mt-16 md:mt-32 rounded-3xl px-4 md:px-20">
         {/* Logo and Header */}
         <div className="text-center">
-          <img src={logo} alt="CCMS Logo" className="mx-auto mb-4 w-56" />
+          <img src={logo} alt="logo" className="mx-auto mb-4 w-56" />
           <h1 className="text-2xl font-bold">Careers at CCMS</h1>
         </div>
 
