@@ -46,7 +46,7 @@ const Hero = () => {
         </div>
 
         {/* Job Options */}
-        <div className="mt-6 bg-[#F0F0F0] p-4 rounded-lg shadow-inner w-full sm:w-2/3 lg:w-1/2">
+        <div className="mt-6 bg-[#F0F0F0] p-4 rounded-lg shadow-inner w-full sm:w-2/3 lg:w-1/2 ">
           <form className="space-y-6 mb-8 mt-6 font-semibold px-4">
             {/* PHP Laravel Developer */}
             <label className="flex items-center">
@@ -58,7 +58,7 @@ const Hero = () => {
                 onChange={(e) => setSelectedJob(e.target.value)} // Update state
               />
               <span className="w-5 h-5 border-2 border-blue-600 rounded-full flex justify-center items-center peer-checked:bg-blue-600">
-                <span className="w-2.5 h-2.5 bg-white rounded-full hidden peer-checked:block"></span>
+              <span className="w-2.5 h-2.5 bg-white rounded-full hidden peer-checked:block"></span>
               </span>
               <span className="ml-2">PHP with Laravel Developer – Job#1431</span>
             </label>
@@ -88,7 +88,7 @@ const Hero = () => {
                 onChange={(e) => setSelectedJob(e.target.value)} // Update state
               />
               <span className="w-5 h-5 border-2 border-blue-600 rounded-full flex justify-center items-center peer-checked:bg-blue-600">
-                <span className="w-2.5 h-2.5 bg-white rounded-full hidden peer-checked:block"></span>
+              <span className="w-2.5 h-2.5 bg-white rounded-full hidden peer-checked:block"></span>
               </span>
               <span className="ml-2">IT Support Specialist – Job#1429</span>
             </label>
