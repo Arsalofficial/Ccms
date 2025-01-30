@@ -99,7 +99,7 @@ const Application = () => {
 
             {/* Middle Name */}
             <div className="flex flex-col">
-              <label className="font-medium">Middle Name</label>
+              <label className="font-medium">Middle Name <span className="text-red-500">*</span></label> 
               <input
                 {...register("middleName", {
                     required: "Middle name is required",
