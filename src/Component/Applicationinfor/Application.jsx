@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logo from "../../assets/logo.png";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
@@ -49,7 +50,7 @@ const Application = () => {
       <div className="bg-white shadow-md p-4 sm:p-6 md:p-8 max-w-5xl w-full mt-10 sm:mt-16 md:mt-32 rounded-3xl px-4 md:px-20">
         {/* Logo and Header */}
         <div className="text-center">
-          
+          <img src={logo} alt="logo" className="mx-auto mb-4 w-56" />
           <h1 className="text-2xl font-bold">Careers at CCMS</h1>
         </div>
 
