@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react"; // Add useEffect import
-import logo from '../../assets/logo.png';
+import React, { useState, useEffect } from "react";
+import logo from "../../assets/logo.png";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const Application = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());  // Default to today
+  const [selectedDate, setSelectedDate] = useState(new Date()); // Default to today
   const [states, setStates] = useState([]);
 
   const stateOptions = {
@@ -25,20 +25,24 @@ const Application = () => {
     handleSubmit,
     setValue,
     trigger,
+    watch,
     formState: { errors },
   } = useForm();
 
   const navigate = useNavigate();
 
+  // Watch the value of the "city" field
+  const cityValue = watch("city");
+
   // Set default value for the "dob" field on component mount
   useEffect(() => {
     setValue("dob", selectedDate); // Set default value for "dob" field
     trigger("dob"); // Trigger validation to clear any initial errors
-  }, [selectedDate]); // Only include selectedDate in the dependency array
+  }, [selectedDate, setValue, trigger]);
 
   const onSubmit = (data) => {
     console.log("Submitting the Form", data);
-    navigate('/positionapply'); // Navigate to the next page
+    navigate("/positionapply"); // Navigate to the next page
   };
 
   return (
@@ -105,10 +109,12 @@ const Application = () => {
 
             {/* Middle Name */}
             <div className="flex flex-col">
-              <label className="font-medium">Middle Name <span className="text-red-500">*</span></label> 
+              <label className="font-medium">
+                Middle Name <span className="text-red-500">*</span>
+              </label>
               <input
                 {...register("middleName", {
-                    required: "Middle name is required",
+                  required: "Middle name is required",
                   pattern: {
                     value: /^[A-Za-z\s]+$/,
                     message: "Middle name should only contain letters",
@@ -161,7 +167,9 @@ const Application = () => {
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
               {errors.address && (
-                <span className="text-red-500 text-sm">{errors.address.message}</span>
+                <span className="text-red-500 text-sm">
+                  {errors.address.message}
+                </span>
               )}
             </div>
 
@@ -182,7 +190,7 @@ const Application = () => {
                   </option>
                 ))}
               </select>
-              {errors.city && (
+              {!cityValue && errors.city && ( // Show error only if cityValue is empty
                 <span className="text-red-500 text-sm">
                   {errors.city.message}
                 </span>
@@ -253,7 +261,7 @@ const Application = () => {
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
                 placeholderText="Select Date"
               />
-              {errors.dob && ( // Show error only if field is empty
+              {errors.dob && (
                 <span className="text-red-500 text-sm">
                   {errors.dob.message}
                 </span>
@@ -279,7 +287,9 @@ const Application = () => {
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
               {errors.phone && (
-                <span className="text-red-500 text-sm">{errors.phone.message}</span>
+                <span className="text-red-500 text-sm">
+                  {errors.phone.message}
+                </span>
               )}
             </div>
 
@@ -301,7 +311,9 @@ const Application = () => {
                 className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
               />
               {errors.email && (
-                <span className="text-red-500 text-sm">{errors.email.message}</span>
+                <span className="text-red-500 text-sm">
+                  {errors.email.message}
+                </span>
               )}
             </div>
 

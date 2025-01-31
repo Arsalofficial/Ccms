@@ -76,24 +76,25 @@ const  PositionApply = () => {
             {/* Work Desired  */}
             <div className="flex flex-col lg:col-span-2">
               <label className="font-medium">
-              Type of Work Desired <span className="text-red-500">*</span>
+                Types of work Desired
               </label>
-              <input
-                {...register("desired", {
-                  required: "Work desired is required",
-                  pattern: {
-                    value: /^[a-zA-Z\s]*$/,
-                    message: "Work desired should only contain letters",
-                  },
-                })}
-                type="text"
-                placeholder="Enter your work desired"
-                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
-              />
-              {errors.desired && (
-                <span className="text-red-500 text-sm">
-                  {errors.desired.message}
-                </span>
+              <div className="relative">
+                <select
+                  {...register("statework", { required: "Work is required" })}
+                  className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm appearance-none w-full"
+                >
+                  <option value="">Select One</option>
+                  <option value="Yes">Full Time</option>
+                  <option value="No">Part Time</option>
+                  <option value="No">Remote</option>
+
+                </select>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                  ▼
+                </div>
+              </div>
+              {errors.statework && (
+                <span className="text-red-500 text-sm">{errors.statework.message}</span>
               )}
             </div>
 
@@ -283,13 +284,14 @@ const  PositionApply = () => {
               )}
             </div>
 
-           {/* Buttons */}
-<div className="col-span-full flex flex-col sm:flex-row gap-5 mt-8">
+        
+ {/* Buttons */}
+<div className="col-span-full flex flex-col-reverse sm:flex-row  gap-4 mt-8">
   {/* Back Button */}
-  <Link to="/Applicationform" className="sm:order-1">
+  <Link to="/Applicationform" className="w-full sm:w-auto">
     <button
       type="button"
-      className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium w-full sm:w-auto"
+      className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium w-full cursor-pointer"
     >
       Back
     </button>
@@ -298,12 +300,11 @@ const  PositionApply = () => {
   {/* Continue Application Button */}
   <button
     type="submit"
-    className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto sm:order-0"
+    className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto cursor-pointer"
   >
     Continue Application
   </button>
 </div>
-
           </form> 
         </div>
       </div>

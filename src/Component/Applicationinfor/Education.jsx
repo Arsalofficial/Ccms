@@ -125,10 +125,7 @@ const Education = () => {
               <input
                 {...register("noyears", {
                   required: "no years is required",
-                  pattern: {
-                    value: /^[a-zA-Z\s]*$/,
-                    message: "no years should only contain letters",
-                  },
+                 
                 })}
                 type="text"
                 placeholder="Enter your no years"
@@ -215,13 +212,13 @@ const Education = () => {
               )}
             </div>
 
-            {/* Buttons */}
-          <div className="col-span-full flex flex-col sm:flex-row gap-5 mt-8">
+          {/* Buttons */}
+          <div className="col-span-full flex flex-col-reverse sm:flex-row  gap-4 mt-8">
             {/* Back Button */}
-            <Link to="/positionapply" className="sm:order-1">
+            <Link to="/Applicationform" className="w-full sm:w-auto">
               <button
                 type="button"
-                className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium w-full sm:w-auto"
+                className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium w-full cursor-pointer"
               >
                 Back
               </button>
@@ -230,7 +227,7 @@ const Education = () => {
             {/* Continue Application Button */}
             <button
               type="submit"
-              className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto sm:order-0"
+              className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto cursor-pointer"
             >
               Continue Application
             </button>

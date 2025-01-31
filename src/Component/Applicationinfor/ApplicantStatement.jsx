@@ -123,24 +123,26 @@ const Statement = () => {
               )}
             </div>
 
-            {/* Buttons */}
-            <div className="col-span-full flex gap-5 mt-8 flex-col sm:flex-row">
-              <Link to="/employer">
-                <button
-                  type="button"
-                  className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium"
-                >
-                  Back
-                </button>
-              </Link>
-
-              <button
-                type="submit"
-                className="bg-[#041970] text-white py-3 px-5 rounded-md font-medium"
-              >
-                Continue Application
-              </button>
-            </div>
+           {/* Buttons */}
+           <div className="col-span-full flex flex-col-reverse sm:flex-row  gap-4 mt-8">
+             {/* Back Button */}
+             <Link to="/Applicationform" className="w-full sm:w-auto">
+               <button
+                 type="button"
+                 className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium w-full cursor-pointer"
+               >
+                 Back
+               </button>
+             </Link>
+           
+             {/* Continue Application Button */}
+             <button
+               type="submit"
+               className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto cursor-pointer"
+             >
+               Continue Application
+             </button>
+           </div>
           </form>
         </div>
       </div>

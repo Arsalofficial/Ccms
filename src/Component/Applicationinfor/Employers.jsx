@@ -24,10 +24,12 @@ const Employers = () => {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors },
   } = useForm();
 
   const navigate = useNavigate();
+  const cityValue = watch("city");
 
   const onSubmit = (data) => {
     console.log("Submitting the Form", data);
@@ -108,7 +110,7 @@ const Employers = () => {
                 })}
                 placeholder="Supervisor Name / Email (Optional)."
                 className="w-full mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
-                rows={2}
+                rows={1}
               />
               {errors.computerSkills && (
                 <span className="text-red-500 text-sm">
@@ -124,10 +126,7 @@ const Employers = () => {
               <input
                 {...register("Address", {
                     required: "Address name is required",
-                  pattern: {
-                    value: /^[A-Za-z\s]+$/,
-                    message: "Address name should only contain letters",
-                  },
+                 
                 })}
                 type="text"
                 placeholder="Enter your Address name"
@@ -139,10 +138,10 @@ const Employers = () => {
                 </span>
               )}
             </div>
-  {/* City */}
-  <div className="flex flex-col">
+   {/* City */}
+   <div className="flex flex-col">
               <label className="font-medium">
-              Country <span className="text-red-500">*</span>
+                City <span className="text-red-500">*</span>
               </label>
               <select
                 {...register("city", { required: "City is required" })}
@@ -156,7 +155,7 @@ const Employers = () => {
                   </option>
                 ))}
               </select>
-              {errors.city && (
+              {!cityValue && errors.city && ( // Show error only if cityValue is empty
                 <span className="text-red-500 text-sm">
                   {errors.city.message}
                 </span>
@@ -185,6 +184,7 @@ const Employers = () => {
                 </span>
               )}
             </div>
+
 
             {/* City name */}
             <div className="flex flex-col">
@@ -322,10 +322,7 @@ const Employers = () => {
               <input
                 {...register("Addresscompany", {
                     required: "Address name is required",
-                  pattern: {
-                    value: /^[A-Za-z\s]+$/,
-                    message: "Address name should only contain letters",
-                  },
+                  
                 })}
                 type="text"
                 placeholder="Enter your Address name"
@@ -419,10 +416,7 @@ const Employers = () => {
               <input
                 {...register("Addresscompanyc", {
                     required: "Address name is required",
-                  pattern: {
-                    value: /^[A-Za-z\s]+$/,
-                    message: "Address name should only contain letters",
-                  },
+                 
                 })}
                 type="text"
                 placeholder="Enter your Address name"
@@ -479,26 +473,26 @@ const Employers = () => {
               )}
             </div>
            
-                        {/* Buttons */}
-                     <div className="col-span-full flex flex-col sm:flex-row gap-5 mt-8">
-                       {/* Back Button */}
-                       <Link to="/criminal" className="sm:order-1">
-                         <button
-                           type="button"
-                           className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium w-full sm:w-auto"
-                         >
-                           Back
-                         </button>
-                       </Link>
-                     
-                       {/* Continue Application Button */}
-                       <button
-                         type="submit"
-                         className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto sm:order-0"
-                       >
-                         Continue Application
-                       </button>
-                     </div>
+                    {/* Buttons */}
+                    <div className="col-span-full flex flex-col-reverse sm:flex-row  gap-4 mt-8">
+                      {/* Back Button */}
+                      <Link to="/Applicationform" className="w-full sm:w-auto">
+                        <button
+                          type="button"
+                          className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium w-full cursor-pointer"
+                        >
+                          Back
+                        </button>
+                      </Link>
+                    
+                      {/* Continue Application Button */}
+                      <button
+                        type="submit"
+                        className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto cursor-pointer"
+                      >
+                        Continue Application
+                      </button>
+                    </div>
           </form>
         </div>
       </div>
