@@ -288,7 +288,7 @@ const  PositionApply = () => {
               <Link to="/Applicationform">
                 <button
                   type="button"
-                  className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium"
+                  className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium sm:w-auto"
                 >
                   Back
                 </button>
@@ -296,7 +296,7 @@ const  PositionApply = () => {
 
               <button
                 type="submit"
-                className="bg-[#041970] text-white py-3 px-5 rounded-md font-medium cursor-pointer"
+                className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto cursor-pointer"
               >
                 Continue Application
               </button>

@@ -6,7 +6,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const Application = () => {
-  const [selectedDate, setSelectedDate] = useState(null); // Default to today
+  const [selectedDate, setSelectedDate] = useState(new Date());  // Default to today
+ 
   const [states, setStates] = useState([]);
 
   const stateOptions = {
@@ -143,29 +144,29 @@ const Application = () => {
             </div>
 
             {/* Date of Birth */}
-            <div className="flex flex-col">
-              <label className="font-medium">
-                Apply For Date <span className="text-red-500">*</span>
-              </label>
-              <DatePicker
-                {...register("dob", { required: "Date is required" })}
-                selected={selectedDate}  // No auto date selection
-                onChange={(date) => {
-                  setSelectedDate(date); // Local state update
-                  setValue("dob", date); // React Hook Form value update
-                }}
-                minDate={new Date()} // Past dates restricted
-                maxDate={new Date()} // Future dates restricted
-                dateFormat="yyyy/MM/dd"
-                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
-                placeholderText="Select Date" // Placeholder text added here
-              />
-              {errors.dob && (
-                <span className="text-red-500 text-sm">
-                  {errors.dob.message}
-                </span>
-              )}
-            </div>
+<div className="flex flex-col">
+  <label className="font-medium">
+    Apply For Date <span className="text-red-500">*</span>
+  </label>
+  <DatePicker
+    {...register("dob", { required: "Date is required" })}
+    selected={selectedDate} // Controlled component
+    onChange={(date) => {
+      setSelectedDate(date); // Update local state
+      setValue("dob", date); // Update React Hook Form value
+    }}
+    minDate={new Date()} // Restrict past dates
+    maxDate={new Date()} // Restrict future dates
+    dateFormat="yyyy/MM/dd"
+    className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
+    placeholderText="Select Date"
+  />
+  {errors.dob && !selectedDate && ( // Show error only if field is empty
+    <span className="text-red-500 text-sm">
+      {errors.dob.message}
+    </span>
+  )}
+</div>
 
             {/* Current Address */}
             <div className="flex flex-col lg:col-span-1">
