@@ -49,7 +49,7 @@ const Hero = () => {
         <div className="mt-6 bg-[#F0F0F0] p-4 rounded-lg shadow-inner w-full sm:w-2/3 lg:w-1/2 ">
           <form className="space-y-6 mb-8 mt-6 font-semibold px-4">
             {/* PHP Laravel Developer */}
-            <label className="flex items-center">
+            <label className="flex items-center ">
               <input
                 type="radio"
                 name="job"

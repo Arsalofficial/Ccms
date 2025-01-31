@@ -140,13 +140,14 @@ const FormPhp = () => {
         </div>
 
         {/* Button */}
-        <div className="mt-6 flex justify-start">
-          <Link to="/Applicationform">
-            <button className="bg-[#041970] text-white px-6 py-4 rounded-md transition font-semibold cursor-pointer">
-              Continue Application
-            </button>
-          </Link>
-        </div>
+               <div className="col-span-full flex flex-col-reverse sm:flex-row  gap-4 mt-8">
+                 <Link to="/Applicationform">
+                   <button 
+                    className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto cursor-pointer">
+                     Continue Application
+                   </button>
+                 </Link>
+               </div>
       </div>
     </div>
   );
