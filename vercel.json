@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/your-missing-path",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
