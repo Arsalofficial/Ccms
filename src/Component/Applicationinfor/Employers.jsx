@@ -293,25 +293,212 @@ const Employers = () => {
                 <hr className="mt-4" />
               </h2>
             </div>
-
-            {/* Buttons */}
-            <div className="col-span-full flex gap-5 mt-8 flex-col sm:flex-row">
-              <Link to="/Applicationform">
-                <button
-                  type="button"
-                  className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium"
-                >
-                  Back
-                </button>
-              </Link>
-
-              <button
-                type="submit"
-                className="bg-[#041970] text-white py-3 px-5 rounded-md font-medium cursor-pointer"
-              >
-                Continue Application
-              </button>
+{/*  Name */}
+<div className="flex flex-col">
+              <label className="font-medium">
+                Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                {...register("namerefernce", {
+                  required: "Name refernce is required",
+                  pattern: {
+                    value: /^[a-zA-Z\s]*$/,
+                    message: "Name should only contain letters",
+                  },
+                })}
+                type="text"
+                placeholder="Enter your first refernce"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
+              />
+              {errors.namerefernce && (
+                <span className="text-red-500 text-sm">
+                  {errors.namerefernce.message}
+                </span>
+              )}
             </div>
+ {/* Address Name */}
+ <div className="flex flex-col">
+              <label className="font-medium">Address <span className="text-red-500">*</span></label> 
+              <input
+                {...register("Addresscompany", {
+                    required: "Address name is required",
+                  pattern: {
+                    value: /^[A-Za-z\s]+$/,
+                    message: "Address name should only contain letters",
+                  },
+                })}
+                type="text"
+                placeholder="Enter your Address name"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
+              />
+              {errors.Addresscompany && (
+                <span className="text-red-500 text-sm">
+                  {errors.Addresscompany.message}
+                </span>
+              )}
+            </div>
+{/* Phone Number */}
+<div className="flex flex-col ">
+              <label className="font-medium">
+               Telephone <span className="text-red-500">*</span>
+              </label>
+              <input
+                {...register("telephonecompany", {
+                  required: "Telephone number is required",
+                  pattern: {
+                    value: /^(03[0-9]{2})[0-9]{7}$/,
+                    message: "Enter a valid 11-digit telephone number (e.g., 03X-XXXXXXXX)",
+                  },
+                })}
+                type="text"
+                placeholder="03X-XXXXXXXX"
+                maxLength="11"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
+              />
+              {errors.telephonecompany && (
+                <span className="text-red-500 text-sm">{errors.telephonecompany.message}</span>
+              )}
+            </div>
+
+            {/* Occupation Name */}
+            <div className="flex flex-col">
+              <label className="font-medium">Occupation <span className="text-red-500">*</span></label> 
+              <input
+                {...register("occupation", {
+                    required: "occupation name is required",
+                  pattern: {
+                    value: /^[A-Za-z\s]+$/,
+                    message: "occupation name should only contain letters",
+                  },
+                })}
+                type="text"
+                placeholder="Enter your occupation name"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
+              />
+              {errors.occupation && (
+                <span className="text-red-500 text-sm">
+                  {errors.occupation.message}
+                </span>
+              )}
+            </div>
+
+  
+            {/* Company 1 Heading */}
+            <div className="col-span-full mt-8">
+              <h2 className="text-xl font-bold mb-6">
+                Company 2
+                <hr className="mt-4" />
+              </h2>
+            </div>
+{/*  Name */}
+<div className="flex flex-col">
+              <label className="font-medium">
+                Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                {...register("namereferncec", {
+                  required: "Name refernce is required",
+                  pattern: {
+                    value: /^[a-zA-Z\s]*$/,
+                    message: "Name should only contain letters",
+                  },
+                })}
+                type="text"
+                placeholder="Enter your first refernce"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
+              />
+              {errors.namereferncec && (
+                <span className="text-red-500 text-sm">
+                  {errors.namereferncec.message}
+                </span>
+              )}
+            </div>
+ {/* Address Name */}
+ <div className="flex flex-col">
+              <label className="font-medium">Address <span className="text-red-500">*</span></label> 
+              <input
+                {...register("Addresscompanyc", {
+                    required: "Address name is required",
+                  pattern: {
+                    value: /^[A-Za-z\s]+$/,
+                    message: "Address name should only contain letters",
+                  },
+                })}
+                type="text"
+                placeholder="Enter your Address name"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
+              />
+              {errors.Addresscompanyc && (
+                <span className="text-red-500 text-sm">
+                  {errors.Addresscompanyc.message}
+                </span>
+              )}
+            </div>
+{/* Phone Number */}
+<div className="flex flex-col ">
+              <label className="font-medium">
+               Telephone <span className="text-red-500">*</span>
+              </label>
+              <input
+                {...register("telephonecompanyc", {
+                  required: "Telephone number is required",
+                  pattern: {
+                    value: /^(03[0-9]{2})[0-9]{7}$/,
+                    message: "Enter a valid 11-digit telephone number (e.g., 03X-XXXXXXXX)",
+                  },
+                })}
+                type="text"
+                placeholder="03X-XXXXXXXX"
+                maxLength="11"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
+              />
+              {errors.telephonecompanyc && (
+                <span className="text-red-500 text-sm">{errors.telephonecompanyc.message}</span>
+              )}
+            </div>
+
+            {/* Occupation Name */}
+            <div className="flex flex-col">
+              <label className="font-medium">Occupation <span className="text-red-500">*</span></label> 
+              <input
+                {...register("occupationc", {
+                    required: "occupation name is required",
+                  pattern: {
+                    value: /^[A-Za-z\s]+$/,
+                    message: "occupation name should only contain letters",
+                  },
+                })}
+                type="text"
+                placeholder="Enter your occupation name"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
+              />
+              {errors.occupationc && (
+                <span className="text-red-500 text-sm">
+                  {errors.occupationc.message}
+                </span>
+              )}
+            </div>
+           
+                        {/* Buttons */}
+                     <div className="col-span-full flex flex-col sm:flex-row gap-5 mt-8">
+                       {/* Back Button */}
+                       <Link to="/criminal" className="sm:order-1">
+                         <button
+                           type="button"
+                           className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium w-full sm:w-auto"
+                         >
+                           Back
+                         </button>
+                       </Link>
+                     
+                       {/* Continue Application Button */}
+                       <button
+                         type="submit"
+                         className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto sm:order-0"
+                       >
+                         Continue Application
+                       </button>
+                     </div>
           </form>
         </div>
       </div>

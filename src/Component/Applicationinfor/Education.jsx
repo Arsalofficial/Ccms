@@ -216,23 +216,25 @@ const Education = () => {
             </div>
 
             {/* Buttons */}
-            <div className="col-span-full flex gap-5 mt-8 flex-col sm:flex-row">
-              <Link to="/positionapply">
-                <button
-                  type="button"
-                  className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium"
-                >
-                  Back
-                </button>
-              </Link>
-
+          <div className="col-span-full flex flex-col sm:flex-row gap-5 mt-8">
+            {/* Back Button */}
+            <Link to="/positionapply" className="sm:order-1">
               <button
-                type="submit"
-                className="bg-[#041970] text-white py-3 px-5 rounded-md font-medium"
+                type="button"
+                className="bg-[#61CE70] text-gray-100 py-3 px-6 rounded-md font-medium w-full sm:w-auto"
               >
-                Continue Application
+                Back
               </button>
-            </div>
+            </Link>
+          
+            {/* Continue Application Button */}
+            <button
+              type="submit"
+              className="bg-[#041970] text-white py-3 px-6 rounded-lg text-base font-medium w-full sm:w-auto sm:order-0"
+            >
+              Continue Application
+            </button>
+          </div>
           </form>
         </div>
       </div>
