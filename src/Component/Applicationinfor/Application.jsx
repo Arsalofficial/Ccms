@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const Application = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());  // Default to today
- 
+
   const [states, setStates] = useState([]);
 
   const stateOptions = {
@@ -49,11 +49,10 @@ const Application = () => {
           {[1, 2, 3, 4, 5, 6].map((step, index) => (
             <React.Fragment key={step}>
               <div
-                className={`w-8 h-8 flex justify-center items-center rounded-lg ${
-                  step === 1
+                className={`w-8 h-8 flex justify-center items-center rounded-lg ${step === 1
                     ? "bg-[#041970] text-white"
                     : "bg-gray-300 text-gray-500"
-                } text-sm font-medium`}
+                  } text-sm font-medium`}
               >
                 {step}
               </div>
@@ -99,10 +98,10 @@ const Application = () => {
 
             {/* Middle Name */}
             <div className="flex flex-col">
-              <label className="font-medium">Middle Name <span className="text-red-500">*</span></label> 
+              <label className="font-medium">Middle Name <span className="text-red-500">*</span></label>
               <input
                 {...register("middleName", {
-                    required: "Middle name is required",
+                  required: "Middle name is required",
                   pattern: {
                     value: /^[A-Za-z\s]+$/,
                     message: "Middle name should only contain letters",
@@ -143,7 +142,7 @@ const Application = () => {
               )}
             </div>
 
-           
+
 
             {/* Current Address */}
             <div className="flex flex-col lg:col-span-1">
@@ -227,6 +226,30 @@ const Application = () => {
               />
               {errors.zip && (
                 <span className="text-red-500 text-sm">{errors.zip.message}</span>
+              )}
+            </div>
+
+            <div className="flex flex-col">
+              <label className="font-medium">
+                Apply For Date <span className="text-red-500">*</span>
+              </label>
+              <DatePicker
+                {...register("dob", { required: "Date is required" })}
+                selected={selectedDate} // Controlled component
+                onChange={(date) => {
+                  setSelectedDate(date); // Update local state
+
+                }}
+                minDate={new Date()} // Restrict past dates
+                maxDate={new Date()} // Restrict future dates
+                dateFormat="yyyy/MM/dd"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
+                placeholderText="Select Date"
+              />
+              {errors.dob && !selectedDate && ( // Show error only if field is empty
+                <span className="text-red-500 text-sm">
+                  {errors.dob.message}
+                </span>
               )}
             </div>
 
