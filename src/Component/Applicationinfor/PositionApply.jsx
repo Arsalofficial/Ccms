@@ -66,7 +66,7 @@ const  PositionApply = () => {
         <div>
           <h2 className="text-xl font-bold mb-6">
           Position Apply For
-            <hr className="mt-4" />
+          <hr className="mt-4 border-t-2 border-[#D1D5DC]" />
           </h2>
 
           <form

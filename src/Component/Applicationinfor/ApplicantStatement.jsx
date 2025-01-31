@@ -62,7 +62,8 @@ const Statement = () => {
         <div>
           <h2 className="text-lg font-bold mb-6">
             Applicant Statement
-            <hr className="mt-4" />
+            <hr className="mt-4 border-t-2 border-[#D1D5DC]" />
+
           </h2>
           <p className="font-bold text-[15px] mb-4">
             I certify that this employment application was completed by me and

@@ -67,7 +67,7 @@ const Employers = () => {
         <div>
           <h2 className="text-xl font-bold mb-6">
           EMPLOYERS 
-            <hr className="mt-4" />
+          <hr className="mt-4 border-t-2 border-[#D1D5DC]" />
           </h2>
 
           <form
@@ -290,8 +290,8 @@ const Employers = () => {
             <div className="col-span-full mt-8">
               <h2 className="text-xl font-bold mb-6">
                 Company 1
-                <hr className="mt-4" />
-              </h2>
+                <hr className="mt-4 border-t-2 border-[#D1D5DC]" />
+                </h2>
             </div>
 {/*  Name */}
 <div className="flex flex-col">
@@ -384,8 +384,8 @@ const Employers = () => {
             <div className="col-span-full mt-8">
               <h2 className="text-xl font-bold mb-6">
                 Company 2
-                <hr className="mt-4" />
-              </h2>
+                <hr className="mt-4 border-t-2 border-[#D1D5DC]" />
+                </h2>
             </div>
 {/*  Name */}
 <div className="flex flex-col">

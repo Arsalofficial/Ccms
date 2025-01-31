@@ -76,8 +76,8 @@ const Application = () => {
         <div>
           <h2 className="text-xl font-bold mb-6">
             Application Information
-            <hr className="mt-4" />
-          </h2>
+            <hr className="mt-4 border-t-2 border-[#D1D5DC]" />
+            </h2>
 
           <form
             onSubmit={handleSubmit(onSubmit)}
