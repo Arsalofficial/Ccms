@@ -24,6 +24,7 @@ const Employers = () => {
     register,
     handleSubmit,
     setValue,
+    trigger,
     watch,
     formState: { errors },
   } = useForm();
@@ -256,36 +257,55 @@ const Employers = () => {
               )}
             </div>
 
- {/* From */}
- <div className="flex flex-col">
+          
+
+<div className="flex flex-col">
               <label className="font-medium">
                 From <span className="text-red-500">*</span>
               </label>
-              <input
-                {...register("fromDate", { required: "From date is required" })}
-                type="date"
-                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
+              <DatePicker
+                {...register('from', { required: "Date is required" })}
+                selected={selectedDate} // Controlled component
+                onChange={(date) => {
+                  setSelectedDate(date); // Update local state
+                  setValue("dob", date); // Update form state
+                  trigger("dob"); // Trigger validation
+                }}
+               
+                dateFormat="yyyy/MM/dd"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
+                placeholderText="Select Date"
               />
-              {errors.fromDate && (
-                <span className="text-red-500 text-sm">{errors.fromDate.message}</span>
+              {errors.from && (
+                <span className="text-red-500 text-sm">
+                  {errors.from.message}
+                </span>
               )}
             </div>
 
-            {/* To */}
             <div className="flex flex-col">
               <label className="font-medium">
                 To <span className="text-red-500">*</span>
               </label>
-              <input
-                {...register("toDate", { required: "To date is required" })}
-                type="date"
-                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
+              <DatePicker
+                {...register('tofrom', { required: "Date is required" })}
+                selected={selectedDate} // Controlled component
+                onChange={(date) => {
+                  setSelectedDate(date); // Update local state
+                  setValue("dob", date); // Update form state
+                  trigger("dob"); // Trigger validation
+                }}
+               
+                dateFormat="yyyy/MM/dd"
+                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
+                placeholderText="Select Date"
               />
-              {errors.toDate && (
-                <span className="text-red-500 text-sm">{errors.toDate.message}</span>
+              {errors.tofrom && (
+                <span className="text-red-500 text-sm">
+                  {errors.tofrom.message}
+                </span>
               )}
             </div>
-
             {/* Company 1 Heading */}
             <div className="col-span-full mt-8">
               <h2 className="text-xl font-bold mb-6">

@@ -6,9 +6,14 @@ import { ToastContainer, toast } from "react-toastify"; // Import toast
 import "react-toastify/dist/ReactToastify.css"; // Import toast styles
 
 const Statement = () => {
-  const {
+    const [selectedDate, setSelectedDate] = useState(null); // Default to today
+  
+ const {
     register,
     handleSubmit,
+    setValue,
+    trigger,
+    watch,
     formState: { errors },
   } = useForm();
 
@@ -104,22 +109,28 @@ const Statement = () => {
 
             {/* Signature Date */}
             <div className="flex flex-col">
-              <label className="font-medium">
-                Signature Date <span className="text-red-500">*</span>
-              </label>
-              <input
-                {...register("Signature", {
-                  required: "Signature date is required",
-                })}
-                type="date"
-                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm"
-              />
-              {errors.Signature && (
-                <span className="text-red-500 text-sm">
-                  {errors.Signature.message}
-                </span>
-              )}
-            </div>
+                          <label className="font-medium">
+                            Signature Date <span className="text-red-500">*</span>
+                          </label>
+                          <DatePicker
+                            {...register('sign', { required: "Date is required" })}
+                            selected={selectedDate} // Controlled component
+                            onChange={(date) => {
+                              setSelectedDate(date); // Update local state
+                              setValue("dob", date); // Update form state
+                              trigger("dob"); // Trigger validation
+                            }}
+                           
+                            dateFormat="yyyy/MM/dd"
+                            className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
+                            placeholderText="Select Date"
+                          />
+                          {errors.sign && (
+                            <span className="text-red-500 text-sm">
+                              {errors.sign.message}
+                            </span>
+                          )}
+                        </div>
 
             {/* Attach Resume */}
             <div className="flex flex-col col-span-full">
