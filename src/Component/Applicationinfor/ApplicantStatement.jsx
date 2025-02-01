@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import { useForm } from "react-hook-form";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify"; // Import toast
 import "react-toastify/dist/ReactToastify.css"; // Import toast styles
 
 const Statement = () => {
-    const [selectedDate, setSelectedDate] = useState(null); // Default to today
+    const [toDate, setToDate] = useState(null); // Separate state for "to
   
  const {
     register,
     handleSubmit,
     setValue,
     trigger,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -108,30 +109,26 @@ const Statement = () => {
             </div>
 
             {/* Signature Date */}
-            <div className="flex flex-col">
-                          <label className="font-medium">
-                            Signature Date <span className="text-red-500">*</span>
-                          </label>
-                          <DatePicker
-                            {...register('sign', { required: "Date is required" })}
-                            selected={selectedDate} // Controlled component
-                            onChange={(date) => {
-                              setSelectedDate(date); // Update local state
-                              setValue("dob", date); // Update form state
-                              trigger("dob"); // Trigger validation
-                            }}
-                           
-                            dateFormat="yyyy/MM/dd"
-                            className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
-                            placeholderText="Select Date"
-                          />
-                          {errors.sign && (
-                            <span className="text-red-500 text-sm">
-                              {errors.sign.message}
-                            </span>
-                          )}
-                        </div>
-
+            <div className="flex flex-col ">
+                    <label className="font-medium">
+                    Signature Date <span className="text-red-500">*</span>
+                    </label>
+                    <DatePicker
+                      {...register("sign", { required: "Sign Date is required" })}
+                      selected={toDate} // Controlled by toDate state
+                      onChange={(date) => {
+                        setToDate(date); // Update local state for "to"
+                        setValue("sign", date); // Update form state
+                        trigger("sign"); // Trigger validation
+                      }}
+                      dateFormat="yyyy/MM/dd"
+                      className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
+                      placeholderText="Select To Date"
+                    />
+                    {errors.sign && (
+                      <span className="text-red-500 text-sm">{errors.sign.message}</span>
+                    )}
+                  </div>
             {/* Attach Resume */}
             <div className="flex flex-col col-span-full">
               <label className="font-medium">
