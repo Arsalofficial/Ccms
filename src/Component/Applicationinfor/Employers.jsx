@@ -6,7 +6,8 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 
 const Employers = () => {
-  const [selectedDate, setSelectedDate] = useState(null); // Default to today
+  const [fromDate, setFromDate] = useState(null); // Separate state for "from"
+  const [toDate, setToDate] = useState(null); // Separate state for "to
   const [states, setStates] = useState([]);
 
   const stateOptions = {
@@ -142,7 +143,7 @@ const Employers = () => {
    {/* City */}
    <div className="flex flex-col">
               <label className="font-medium">
-                City <span className="text-red-500">*</span>
+                Country <span className="text-red-500">*</span>
               </label>
               <select
                 {...register("city", { required: "City is required" })}
@@ -259,53 +260,48 @@ const Employers = () => {
 
           
 
-<div className="flex flex-col">
-              <label className="font-medium">
-                From <span className="text-red-500">*</span>
-              </label>
-              <DatePicker
-                {...register('from', { required: "Date is required" })}
-                selected={selectedDate} // Controlled component
-                onChange={(date) => {
-                  setSelectedDate(date); // Update local state
-                  setValue("dob", date); // Update form state
-                  trigger("dob"); // Trigger validation
-                }}
-               
-                dateFormat="yyyy/MM/dd"
-                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
-                placeholderText="Select Date"
-              />
-              {errors.from && (
-                <span className="text-red-500 text-sm">
-                  {errors.from.message}
-                </span>
-              )}
-            </div>
-
             <div className="flex flex-col">
-              <label className="font-medium">
-                To <span className="text-red-500">*</span>
-              </label>
-              <DatePicker
-                {...register('tofrom', { required: "Date is required" })}
-                selected={selectedDate} // Controlled component
-                onChange={(date) => {
-                  setSelectedDate(date); // Update local state
-                  setValue("dob", date); // Update form state
-                  trigger("dob"); // Trigger validation
-                }}
-               
-                dateFormat="yyyy/MM/dd"
-                className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
-                placeholderText="Select Date"
-              />
-              {errors.tofrom && (
-                <span className="text-red-500 text-sm">
-                  {errors.tofrom.message}
-                </span>
-              )}
-            </div>
+        <label className="font-medium">
+          From <span className="text-red-500">*</span>
+        </label>
+        <DatePicker
+          {...register("from", { required: "From Date is required" })}
+          selected={fromDate} // Controlled by fromDate state
+          onChange={(date) => {
+            setFromDate(date); // Update local state for "from"
+            setValue("from", date); // Update form state
+            trigger("from"); // Trigger validation
+          }}
+          dateFormat="yyyy/MM/dd"
+          className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
+          placeholderText="Select From Date"
+        />
+        {errors.from && (
+          <span className="text-red-500 text-sm">{errors.from.message}</span>
+        )}
+      </div>
+
+      <div className="flex flex-col ">
+        <label className="font-medium">
+          To <span className="text-red-500">*</span>
+        </label>
+        <DatePicker
+          {...register("to", { required: "To Date is required" })}
+          selected={toDate} // Controlled by toDate state
+          onChange={(date) => {
+            setToDate(date); // Update local state for "to"
+            setValue("to", date); // Update form state
+            trigger("to"); // Trigger validation
+          }}
+          dateFormat="yyyy/MM/dd"
+          className="mt-1 focus:border-blue-600 py-4 focus:outline-none border border-black px-4 text-sm w-full"
+          placeholderText="Select To Date"
+        />
+        {errors.to && (
+          <span className="text-red-500 text-sm">{errors.to.message}</span>
+        )}
+      </div>
+
             {/* Company 1 Heading */}
             <div className="col-span-full mt-8">
               <h2 className="text-xl font-bold mb-6">
