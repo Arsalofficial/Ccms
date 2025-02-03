@@ -26,7 +26,6 @@ function App() {
         <Route path="/criminal" element={<Criminal />} />
         <Route path="/employer" element={<Employers />} />
         <Route path="/applicant" element={<Statement />} />
-
       </Routes>
     </BrowserRouter>
   );
