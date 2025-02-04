@@ -55,11 +55,11 @@ const Application = () => {
         </div>
 
         {/* Progress Steps */}
-        <div className="flex justify-center items-center my-8">
+        <div className="flex justify-center items-center my-8 ">
           {[1, 2, 3, 4, 5, 6].map((step, index) => (
             <React.Fragment key={step}>
               <div
-                className={`w-8 h-8 flex justify-center items-center rounded-lg ${
+                className={`w-8 h-8 flex justify-center items-center rounded-lg  ${
                   step === 1
                     ? "bg-[#041970] text-white"
                     : "bg-gray-300 text-gray-500"
@@ -67,7 +67,7 @@ const Application = () => {
               >
                 {step}
               </div>
-              {index < 5 && <div className="flex-1 h-0.5 bg-gray-300"></div>}
+              {index < 5 && <div className="flex-1 h-0.5 bg-gray-300 "></div>}
             </React.Fragment>
           ))}
         </div>

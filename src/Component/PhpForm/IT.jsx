@@ -17,7 +17,7 @@ const IT = () => {
         <div className="space-y-4">
           <h1 className="text-2xl md:text-3xl font-bold">
             Job description
-            <hr className="mt-3 border-e-gray-500" />
+            <hr className="mt-4 border-t-2 border-[#D1D5DC]" />
           </h1>
 
           <p className="font-medium pt-6 text-sm md:text-base">

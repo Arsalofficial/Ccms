@@ -18,6 +18,7 @@ const FormPhp = () => {
           <p className="text-md sm:text-md font-bold">You are Applying for</p>
           <h1 className="text-3xl sm:text-4xl font-bold">
             PHP with Laravel Developer – Job#1431
+            <hr className="mt-4 border-t-2 border-[#D1D5DC]" />
           </h1>
           <p className="text-md sm:text-md font-bold">Job description</p>
           <p className="text-md sm:text-md font-bold">PHP with Laravel Developer</p>

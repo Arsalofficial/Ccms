@@ -16,7 +16,7 @@ const Caregiver = () => {
         {/* Body Content */}
         <div className="space-y-4">
           <h1 className="text-3xl font-bold">Job description</h1>
-          <hr className="mt-3 border-e-gray-500" />
+          <hr className="mt-4 border-t-2 border-[#D1D5DC]" />
           <p className="text-[16px] font-medium">Care Monitoring System (CCMS) Job Opening</p>
           <p className="text-[16px] font-medium"><b>Position:</b> EMAR System Trainer & Product Collaborator</p>
           <p className="text-[16px] font-medium">

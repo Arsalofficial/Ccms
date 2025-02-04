@@ -166,8 +166,8 @@ const Education = () => {
             <div className="col-span-full mt-8">
               <h2 className="text-xl font-bold mb-6">
                 Proficient Computer Skills/Softwares
-                <hr className="mt-4" />
-              </h2>
+                <hr className="mt-4 border-t-2 border-[#D1D5DC]" />
+                </h2>
             </div>
 
            
